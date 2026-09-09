@@ -1,0 +1,495 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --color-principal: #2563eb;
+    --color-texto: #222;
+    --color-fondo: #fff;
+    --color-fondo-secundario: #f7f7f7;
+    --color-borde: #ddd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: var(--color-fondo);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.contenedor {
+    width: min(90%, 1100px);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+.logo span {
+    font-weight: 400;
+    color: var(--color-texto);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-list a {
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--color-principal);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-contenido {
+    display: flex;
+    align-items: center;
+}
+
+.hero-texto {
+    max-width: 700px;
+}
+
+.hero-saludo {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1;
+    margin-bottom: 15px;
+    color: var(--color-principal);
+}
+
+.hero h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-texto > p:not(.hero-saludo) {
+    max-width: 600px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    background-color: var(--color-principal);
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--color-principal);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+    .sobre-mi,
+    .habilidades,
+    .proyectos,
+    .servicios,
+    .contacto {
+     padding: 70px 0;
+}
+
+    .sobre-mi h2,
+    .habilidades h2,
+    .proyectos h2,
+    .servicios h2,
+    .contacto h2 {
+    margin-bottom: 25px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+
+/* =========================
+   SOBRE MÍ
+========================= */
+
+.sobre-mi {
+    background-color: var(--color-fondo-secundario);
+}
+
+.sobre-mi p {
+    max-width: 750px;
+    margin-bottom: 15px;
+}
+
+.sobre-mi-contenido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.sobre-mi-contenido h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: var(--color-principal);
+}
+
+.sobre-mi-contenido p {
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   HABILIDADES
+========================= */
+
+.habilidades-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.habilidades-lista article {
+    padding: 30px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.habilidades-lista article:hover {
+    transform: translateY(-5px);
+}
+
+.habilidades-lista h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   PROYECTOS
+========================= */
+
+.proyectos {
+    background-color: var(--color-fondo-secundario);
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.proyecto {
+    background-color: #fff;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.proyecto-imagen {
+    height: 250px;
+    overflow: hidden;
+    background-color: #e9e9e9;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.proyecto:hover .proyecto-imagen img {
+    transform: scale(1.05);
+}
+
+.proyecto-contenido {
+    padding: 30px;
+}
+
+.proyecto h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.proyecto-contenido p {
+    margin-bottom: 20px;
+}
+
+.proyecto-estado {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 12px;
+    border: 1px solid var(--color-principal);
+    border-radius: 20px;
+    color: var(--color-principal);
+    background-color: #eff6ff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tecnologias span {
+    padding: 5px 10px;
+   border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.proyecto-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.proyecto-enlaces a {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    color: var(--color-principal);
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.proyecto-enlaces a:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-principal);
+    color: #fff;
+}
+
+.proyecto-enlaces a:hover {
+    transform: translateY(-2px);
+    opacity: 0.7;
+}
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.servicios-grid article {
+    padding: 30px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.servicios-grid article:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-principal);
+}
+
+.servicios-grid h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    text-align: center;
+    background-color: var(--color-fondo-secundario);
+}
+
+.contacto p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .nav {
+         flex-direction: row;
+         flex-wrap: wrap;
+         padding: 20px 0;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .nav-list.activo {
+        display: flex;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 100px 0;
+    }
+
+    .habilidades-lista,
+    .proyectos-grid,
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-mi,
+    .habilidades,
+    .proyectos,
+    .servicios,
+    .contacto {
+        padding: 70px 0;
+    }
+
+    .proyecto-imagen {
+    height: auto;
+}
+
+    .proyecto-imagen img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .sobre-mi-contenido {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    }
+}
